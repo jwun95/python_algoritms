@@ -1,21 +1,20 @@
-def find_min_idx(a):
-    n = len(a)
-    min_idx = 0
-    for i in range(1,n):
-        if a[i] < a[min_idx]:
-            min_idx = i 
+def find_min_value(k):
+    min_value = 0
+    for i in range(0,len(k)):
+        if k[i] < k[min_value]:
+            min_value = i
 
-    return min_idx
+    return min_value
 
 def sel_sort(a):
-    result = []
+    
+    e = []
     while a:
-        min_idx = find_min_idx(a)
-        value = a.pop(min_idx)
-        result.append(value)
+        min_value = find_min_value(a)
+        value = a.pop(min_value)
+        e.append(value)
 
-    return result            
-
+    return e
 
 a = [5,3,4,1,2]
 print(sel_sort(a))
